@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Design your API | RAML</title>
+    <meta name="generator" content="Jekyll v3.6.2" />
+    <meta property="og:title" content="Design your API" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="https://raml.org/developers/design-your-api" />
+    <meta property="og:url" content="https://raml.org/developers/design-your-api" />
+    <meta property="og:site_name" content="RAML" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2015-10-18T19:18:39-05:00" />
+    <script type="application/ld+json">
+        {
+            "@type": "BlogPosting",
+            "url": "https://raml.org/developers/design-your-api",
+            "headline": "Design your API",
+            "dateModified": "2015-10-18T19:18:39-05:00",
+            "datePublished": "2015-10-18T19:18:39-05:00",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://raml.org/developers/design-your-api"
+            },
+            "@context": "http://schema.org"
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=0, maximum-scale=1, user-scalable=yes">
+    <title>设计你的API | RAML</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="/css/gdpr-cookie.css" rel=stylesheet>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/gdpr-cookie.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-44483523-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body class="design-your-api page ">
+    <div class="top_wrapper">
+        <header role="banner" id="header_nav">
+            <div class="container">
+                <div class="navbarright">
+                    <ul class="top_menu">
+                        <li><a href="https://github.com/search?utf8=%E2%9C%93&q=RAML" target="_blank">GitHub</a></li>
+                        <li><a href="https://forum.raml.org" target="_blank">论坛</a></li>
+                        <li><a href="/slack">Slack</a></li>
+                        <li><a href="https://twitter.com/ramlapi" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <nav class="navbar navbar-inverse">
+                    <div>
+                        <div class="navbar-header"><a class="navbar-brand" href="/"><img src="/images/ramllogo.png" /></a></div>
+                        <div id="navbar" class="">
+                            <ul class="nav navbar-nav navbarright">
+                                <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/developer">对于开发人员<span
+                                            class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li class="dropdown-submenu"><a href="/developer" class="dropdown-link">为什么
+                                                Raml <span class="dropdown-caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/developers/design-your-api">设计</a></li>
+                                                <li><a href="/developers/build-your-api">建立</a></li>
+                                                <li><a href="/developers/test-your-api">测试</a></li>
+                                                <li><a href="/developers/document-your-api">文档</a></li>
+                                                <li><a href="/developers/share-support-your-api">分享</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu"><a href="/developers/raml-100-tutorial" class="dropdown-link">教程<span
+                                                    class="dropdown-caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/developers/raml-100-tutorial">RAML 100 教程</a></li>
+                                                <li><a href="/developers/raml-200-tutorial">RAML 200 教程</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/"
+                                                target="_blank" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">规范</a></li>
+                                        <li><a href="/projects">项目库</a></li>
+                                        <li><a href="/developers/books-and-resources">书和资源</a></li>
+                                        <li><a href="/developers/contributing">特约</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/enterprises">对于企业
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li><a href="/enterprises">为什么用 RAML</a></li>
+                                        <li><a href="/enterprise/vendor-support">提供商支持</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_dropdown"><a class="parentlink" href="/projects">项目</a></li>
+                                <li class="parent_dropdown"><a class="parentlink" href="https://medium.com/raml-api">博客</a></li>
+                                <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/about-raml">关于
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li><a href="/workgroup">工作组</a></li>
+                                        <li><a href="/legal">法律</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <div class="container page-content">
+        <div class="row">
+            <aside class="col-md-3 col-xs-3 col-sm-3" role="complementary">
+                <div class="region-sidebar well">
+                    <section class="ramlapilinks">
+                        <div class="raml-links-wrapper"><a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/"
+                                target="_blank" class="raml-links" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">阅读规范</a></div>
+                    </section>
+                </div>
+            </aside>
+            <div class="col-md-9 col-xs-9 col-sm-9 article-content">
+                <h1 class="page-header">设计你的API</h1>
+                <p>设计API很容易。但是设计一个长期存在且用户喜欢的API -
+                    这有点难度。但是使用RAML，您可以充分利用完整的API设计生命周期，这意味着您可以直观地设计API，测试它并获得用户反馈，而无需编写任何代码。</p>
+                <h3>视觉设计</h3>
+                <p>RAML允许您以人类可读的格式描述您的API - 换句话说，纯文本。当您使用常识术语定义RESTful API时，使用API​​ Workbench或API
+                    Designer等工具，您可以直观地看到API的样子。这意味着对于每个按键，您都可以直观地了解API的外观，感觉和功能。这也意味着RAML易于学习和易于使用 - 即使您不熟悉设计RESTful
+                    API。</p>
+                <h3>代码重用</h3>
+                除了能够以您希望的方式直观地验证您的API外观，感觉和功能之外，RAML还允许您合并两个开发人员最佳实践：设计模式和代码重用。RAML不是必须依靠人工验证来确保您的API一致，而是让您利用库，覆盖，特征和资源类型来确保您的API始终保持一致
+                - 并在此过程中为您节省大量的返工。<h3>原型您的REST API</h3>
+                <p>认为您的API满足用户的需求是不够的 - 您应该知道它确实如此。使用RAML，您可以轻松地对API进行原型设计，并将其发送给全球潜在的API用户或合作伙伴。这意味着您可以随时随地与任何人共享API模拟。</p>
+                <p>加上RAML使这些开发人员可以轻松地试用您的API，并在流行的API工具（如Postman）中内置集成。您甚至可以使用API​​ Notebook通过模拟API引导用户，或者更好的是，让他们为您提供他们如何与您的API进行交互的真实用例 - 再次无需任何人编写一行代码！</p>
+                <h3>完善您的REST API</h3>
+                <p>因为您能够设计，原型化并获得有关RESTful API设计的反馈，所以您可以在生产之前消除设计缺陷和缺陷。这意味着您可以利用API设计周期，并创建一个您知道用户会喜欢的API，以及经过深思熟虑并经过仔细测试以确保其足够长久的API。</p>
+                <h2>强大的工具</h2>
+                <p>RAML在首次推出时完全改变了API行业，将重点从“记录您的API”转移到包含完整的API生命周期。RAML的生态系统是让开发人员能够做更多的事情，而且随着RAML的发展，工具也是如此。 <h3>API Workbench</h3>
+                    <p>API Workbench是第一个功能齐全的API设计IDE。API设计不再是二等公民，但现在开发人员可以在任何地方使用他们的API设计，同时还可以利用内置的Git支持，内嵌控制台，轮廓和重构工具，轻量化的实用程序。</p>
+                    <p>&nbsp;<br /><a href="/projects#q:api%20workbench" class="button info">更多信息</a><a href="http://www.apiworkbench.com"
+                            class="button" target="_blank">下载</a></p>&nbsp; <h3>API设计器</h3>
+                    <p>API Designer提供了一个基于Web的直观设计器，内置API控制台和模拟服务，使开发人员可以轻松地协同工作并协作完成API设计，同时充分利用RAML提供的所有优势。</p>
+                    <p>&nbsp;<br /><a href="/projects#q:api%20designer" class="button info">更多信息</a><a href="https://github.com/mulesoft/api-designer"
+                            target="_blank" class="button">下载</a></p>&nbsp; <h3>流行的IDE插件及更多</h3>
+                    <p>RAML还可以与当今许多流行的IDE一起使用，包括Sublime Text Editor和Visual Studio。您可以在我们的项目库中 <a href="/projects">项目库中</a>找到完整列表。
+            </div>
+        </div>
+    </div>
+    <div class="bottom-wrapper">
+        <footer class="footer container">
+            <div class="row">
+                <div class="col-md-4">
+                    <section>
+                        <div class="logo"><img src="/images/ramllogo.png" alt="home" /></div>
+                        <div class="footer_description">
+                            <p>RAML是唯一一个旨在以人类可读格式包含完整API生命周期的规范，其中包含代码和设计模式重用。使用RAML，您可以使用一个规范真正 <a href="/developers/design-your-api">设计</a>,
+                                <a href="/developers/build-your-api">构建</a>, <a href="/developers/test-your-api">测试</a>,
+                                <a href="/developers/document-your-api">记录</a>, 和 <a href="/developers/share-support-your-api">共享</a>
+                                您的API。 </p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-8">
+                    <div class="footer_meu">
+                        <ul>
+                            <li><a href="/developer" title="For Developers">对于开发人员</a></li>
+                            <li><a href="/enterprises" title="For Enterprises">对于企业</a></li>
+                            <li><a href="/projects" title="Projects">项目</a></li>
+                            <li><a href="https://forum.raml.org/" title="Forum">论坛</a></li>
+                            <li><a href="https://medium.com/raml-api" title="Blog">博客</a></li>
+                            <li><a href="/about-raml" title="About">关于</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_links">
+                        <ul>
+                            <li><a href="/" title="RAML">RAML</a></li>
+                            <li><a href="/workgroup" title="Workgroup">工作组</a></li>
+                            <li><a href="/contact" title="Contact">联系</a></li>
+                            <li><a href="/legal" title="Licensing">许可</a></li>
+                            <li><a href="https://forum.raml.org/privacy" title="Privacy">隐私</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

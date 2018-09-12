@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RAML 100 教程 | RAML</title>
+    <meta name="generator" content="Jekyll v3.6.2" />
+    <meta property="og:title" content="RAML 100 教程" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="https://raml.org/developers/raml-100-tutorial" />
+    <meta property="og:url" content="https://raml.org/developers/raml-100-tutorial" />
+    <meta property="og:site_name" content="RAML" />
+    <script type="application/ld+json">
+        {
+            "@type": "WebPage",
+            "url": "https://raml.org/developers/raml-100-tutorial",
+            "headline": "RAML 100 教程",
+            "@context": "http://schema.org"
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=0, maximum-scale=1, user-scalable=yes">
+    <title>RAML 100 教程 | RAML</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="/css/gdpr-cookie.css" rel=stylesheet>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/gdpr-cookie.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-44483523-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body class="raml-100-tutorial page ">
+    <div class="top_wrapper">
+        <header role="banner" id="header_nav">
+            <div class="container">
+                <div class="navbarright">
+                    <ul class="top_menu">
+                        <li><a href="https://github.com/search?utf8=%E2%9C%93&q=RAML" target="_blank">GitHub</a></li>
+                        <li><a href="https://forum.raml.org" target="_blank">论坛</a></li>
+                        <li><a href="/slack">Slack</a></li>
+                        <li><a href="https://twitter.com/ramlapi" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <nav class="navbar navbar-inverse">
+                    <div>
+                        <div class="navbar-header"><a class="navbar-brand" href="/"><img src="/images/ramllogo.png" /></a></div>
+                        <div id="navbar" class="">
+                            <ul class="nav navbar-nav navbarright">
+                                <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/developer">对于开发人员<span
+                                            class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li class="dropdown-submenu"><a href="/developer" class="dropdown-link">为什么
+                                                Raml <span class="dropdown-caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/developers/design-your-api">设计</a></li>
+                                                <li><a href="/developers/build-your-api">建立</a></li>
+                                                <li><a href="/developers/test-your-api">测试</a></li>
+                                                <li><a href="/developers/document-your-api">文档</a></li>
+                                                <li><a href="/developers/share-support-your-api">分享</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu"><a href="/developers/raml-100-tutorial" class="dropdown-link">教程<span
+                                                    class="dropdown-caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/developers/raml-100-tutorial">RAML 100 教程</a></li>
+                                                <li><a href="/developers/raml-200-tutorial">RAML 200 教程</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/"
+                                                target="_blank" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">规范</a></li>
+                                        <li><a href="/projects">项目库</a></li>
+                                        <li><a href="/developers/books-and-resources">书和资源</a></li>
+                                        <li><a href="/developers/contributing">特约</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/enterprises">对于企业
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li><a href="/enterprises">为什么用 RAML</a></li>
+                                        <li><a href="/enterprise/vendor-support">提供商支持</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_dropdown"><a class="parentlink" href="/projects">项目</a></li>
+                                <li class="parent_dropdown"><a class="parentlink" href="https://medium.com/raml-api">博客</a></li>
+                                <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/about-raml">关于
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li><a href="/workgroup">工作组</a></li>
+                                        <li><a href="/legal">法律</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <div class="container page-content">
+        <div class="row">
+            <aside class="col-md-3 col-xs-3 col-sm-3" role="complementary">
+                <div class="region-sidebar well" data-spy="affix" data-offset-top="105">
+                    <section class="ramlapilinks">
+                        <div class="raml-links-wrapper"><a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/"
+                                target="_blank" class="raml-links" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">阅读规范</a></div>
+                    </section>
+                    <section class="sidebar-menu"><a href="#" class="active firstmenu">RAML 100 教程<span class="caret"></span></a>
+                        <ul class="sidemenu">
+                            <li><a href="#enter-the-root" class="active">第1步：输入Root</a></li>
+                            <li><a href="#enter-resources" class="active">第2步：输入资源</a></li>
+                            <li><a href="#enter-methods" class="active">第3步：输入方法</a></li>
+                            <li><a href="#enter-uri-parameters" class="active">第4步：输入URI参数</a></li>
+                            <li><a href="#enter-query-parameters" class="active">步骤5：输入查询参数</a></li>
+                            <li><a href="#enter-responses" class="active">第6步：输入回复</a></li>
+                        </ul><a href="/developers/raml-200-tutorial" class="lastsidemenu">RAML 200 教程</a>
+                    </section>
+                </div>
+            </aside>
+            <div class="col-md-9 col-xs-9 col-sm-9 article-content">
+                <h1 class="page-header">RAML 100 教程</h1><a name="step-introduction"></a>
+                <div class="tutorial-intro">
+                    <p><strong>目标：</strong> 通过为BookMobile设计一个非常基本的API来了解RAML的基础知识。</p>
+                    <p><strong>介绍</strong></p>
+                    <p>本教程将指导您概念化API的设计并将其编写在RAML（RESTful API建模语言）中。</p>
+                    <p><strong>假设</strong></p>
+                    <p>您了解RESTful API如何运行的基础知识：如何发送请求和响应，以及如何指定RESTful API的组件。</p>
+                </div><a name="enter-the-root"></a>
+                <h2 id="enter-the-root">输入 ROOT</h2>
+                <p>假设您是BookMobile初创公司的API设计人员。你已经制定了商业计划，扩展计划，Ashton Kutcher是天使投资人。您知道您希望开发人员利用您构建的内容，以便您可以利用他们构建的内容。您知道拥有RESTful API是实现这一目标的一种方法。所以，让我们开始编写规范。</p>
+                <p><strong>首先，您将在文本编辑器中输入一些基本信息。您可以将API的RAML定义保存为具有推荐扩展名.raml的文本文件：</strong></p>
+                <pre><code class="lang-yaml">#%RAML 1.0
+    ---
+    title: e-BookMobile API
+    baseUri: http://api.e-bookmobile.com/{version}
+    version: v1
+    </code></pre>
+                <p>您在规范的 <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#the-root-of-the-document">root</a>
+                    （或顶部）输入的所有内容都适用于API的其余部分。当您发现构建API的模式时，这将变得非常方便。您选择的baseURI将用于每次调用，因此请确保它尽可能简洁明了。</p><a name="enter-resources"></a>
+                <h2 id="enter-resources">输入资源</h2>
+                <p>作为一个深思熟虑的API设计师，重要的是要考虑API使用者将如何使用您的API。这一点尤其重要，因为在很多方面，作为API设计师，您可以控制消耗。例如，考虑BookMobile API的功能。您知道您希望您的用户能够跟踪他们阅读的内容和他们的收藏。用户还应该能够发现新书并查看他们最喜欢的作者撰写的其他书籍。为此，您可以将各种<em>集合</em> 定义为  <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#resources-and-nested-resources">资源</a>。</p>
+                <p><strong>回顾一下您的API使用者将如何使用您的API，请在您的根目录下输入以下三个资源：</strong></p>
+                <pre><code class="lang-yaml">/users:
+      /authors:
+      /books:
+    </code></pre>
+                <p>请注意，这些资源都以斜杠（/）开头。在RAML中，这是您指示资源的方式。嵌套在这些顶级资源下的任何方法和参数都属于该资源并作用于该资源。现在，由于这些资源中的每一个都是单个对象（特定作者，书籍和用户）的集合，我们需要定义一些子资源来填充集合。</p>
+                <p><strong>当您想要调出资源的特定子集以缩小它时，嵌套资源非常有用。例如：</strong></p>
+                <pre><code class="lang-yaml">/authors:
+      /{authorname}:
+    </code></pre>
+                <p>这使API使用者可以与密钥资源及其嵌套资源进行交互。例如，对<i>http://api.e-bookmobile.com/authors/Mary_Roach</i> 的GET请求会返回有关科学作家和幽默家Mary Roach的详细信息。现在，让我们考虑一下我们希望开发人员和API消费者做些什么。</p><a name="enter-methods"></a>
+                <h2 id="enter-methods">输入方法</h2>
+                <p>这是它开始变得有趣的地方，因为您决定了开发人员希望能够使用您提供的资源。 <strong>让我们快速回顾4个最常见的HTTP动词：</strong></p>
+                <p><strong>GET -</strong> 检索请求URI中定义的信息。</p>
+                <p><strong>PUT -</strong> 替换已寻址的集合。在对象级别，创建或更新它。</p>
+                <p><strong>POST -</strong> 在集合中创建一个新条目。此方法通常不在对象级别使用。</p>
+                <p><strong>DELETE -</strong> 删除请求URI中定义的信息。</p>
+                <p>您可以在任何级别为BookMobile API的每个资源添加任意数量的方法。但是，每个HTTP方法每个资源只能使用一次。不要超载GET（你知道你是谁）。</p>
+                <p>在此示例中，您希望开发人员能够在集合级别工作。例如，您的API使用者可以从集合（GET）中检索书籍，添加书籍（POST）或更新整个库（PUT）。您不希望他们能够删除最高级别的信息。让我们专注于构建/ books资源。</p>
+                <p><strong>嵌套方法以允许开发人员在您的资源下执行这些操作。请注意，您必须在RAML API定义中使用小写的方法：</strong></p>
+                <pre><code class="lang-yaml">/books:
+      get:
+      post:
+      put:
+    </code></pre><a name="enter-uri-parameters"></a>
+                <h2 id="enter-uri-parameters">输入URI参数</h2>
+                <p>我们定义的资源是较小的相关对象的集合。作为深思熟虑的API设计人员，您已经意识到开发人员很可能希望对这些更细粒度的对象采取行动。还记得上面嵌套资源的例子吗？/ authors由个人作者组成，例如{authorName}引用。这是一个URI参数，由RAML中的大括号括起来表示：</p>
+                <pre><code class="lang-yaml">/books:
+      /{bookTitle}:
+    </code></pre>
+                <p>因此，要向这个嵌套资源发出请求，Mary Roach的书，Stiff的URI看起来像 <i>http://api.e-bookmobile.com/v1/books/Stiff</i></p>
+                <p><strong>是时候编辑您的规范以反映资源的固有粒度特征：</strong></p>
+                <pre><code class="lang-yaml">/books:
+      get:
+      put:
+      post:
+      /{bookTitle}:
+        get:
+        put:
+        delete:
+        /author:
+          get:
+        /publisher:
+          get:
+    </code></pre><a name="enter-query-parameters"></a>
+                <h2 id="enter-query-parameters">输入 QUERY PARAMETERS</h2>
+                <p>到目前为止工作很棒！现在，假设您希望API允许更强大的操作。您已经拥有基于集合的资源类型，这些资源类型由基于对象的URI参数进一步定义。但是，您还希望开发人员能够执行过滤集合等操作。查询参数是实现此目的的好方法。</p>
+                <p><strong>首先在书籍的GET方法下添加一些查询参数。这些可以是特定的特征，例如出版一本书的年份：</strong></p>
+                <pre><code class="lang-yaml">/books:
+      get:
+        queryParameters:
+          author:
+          publicationYear:
+          rating:
+          isbn:
+      put:
+      post:
+    </code></pre>
+                <p>查询参数也可以是服务器处理API使用者请求所需的内容，例如访问令牌。通常，您需要安全授权才能更改集合或记录。</p>
+                <p><strong>将访问令牌查询参数嵌套在特定标题的PUT方法下：</strong></p>
+                <pre><code class="lang-yaml">/books:
+      /{bookTitle}
+        get:
+          queryParameters:
+            author:
+            publicationYear:
+            rating:
+            isbn:
+        put:
+          queryParameters:
+            access_token:
+    </code></pre>
+                <p>API的资源和方法通常具有许多关联的查询参数。每个查询参数可以具有任意数量的可选属性以进一步定义它。快速参考指南包含完整列表。</p>
+                <p><strong>现在，为您在上面定义的每个查询参数指定属性。与往常一样，尽可能完整地在您的文档中：</strong></p>
+                <pre><code class="lang-yaml">/books:
+      /{bookTitle}
+        get:
+          queryParameters:
+            author:
+              displayName: Author
+              type: string
+              description: An author&#39;s full name
+              example: Mary Roach
+              required: false
+            publicationYear:
+              displayName: Pub Year
+              type: number
+              description: The year released for the first time in the US
+              example: 1984
+              required: false
+            rating:
+              displayName: Rating
+              type: number
+              description: Average rating (1-5) submitted by users
+              example: 3.14
+              required: false
+            isbn:
+              displayName: ISBN
+              type: string
+              minLength: 10
+              example: 0321736079
+        put:
+          queryParameters:
+            access_token:
+              displayName: Access Token
+              type: string
+              description: Token giving you permission to make call
+              required: true
+    </code></pre>
+                <p>要进行PUT调用，您的URI看起来像 <i>http://api.e-bookmobile.com/books/Stiff?access_token=ACCESS</i>
+                    TOKEN</p><a name="enter-responses"></a>
+                <h2 id="enter-responses">输入 RESPONSES</h2>
+                <p>响应必须是一个或多个HTTP状态代码的映射，每个响应可以包括描述，示例或模式。在Level 200教程中更全面地解释了模式。</p>
+                <pre><code class="lang-yaml">/books:
+      /{bookTitle}:
+        get:
+          description: Retrieve a specific book title
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    {
+                      &quot;data&quot;: {
+                        &quot;id&quot;: &quot;SbBGk&quot;,
+                        &quot;title&quot;: &quot;Stiff: The Curious Lives of Human Cadavers&quot;,
+                        &quot;description&quot;: null,
+                        &quot;datetime&quot;: 1341533193,
+                        &quot;genre&quot;: &quot;science&quot;,
+                        &quot;author&quot;: &quot;Mary Roach&quot;,
+                        &quot;link&quot;: &quot;http://e-bookmobile.com/books/Stiff&quot;,
+                      },
+                      &quot;success&quot;: true,
+                      &quot;status&quot;: 200
+                    }
+    </code></pre>
+                <p><strong>恭喜！您刚刚在RAML中编写了第一个API定义。 <a href="/developers/raml-200-tutorial">继续阅读200教程 &raquo;</a></strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-wrapper">
+        <footer class="footer container">
+            <div class="row">
+                <div class="col-md-4">
+                    <section>
+                        <div class="logo"><img src="/images/ramllogo.png" alt="home" /></div>
+                        <div class="footer_description">
+                            <p>RAML是唯一一个旨在以人类可读格式包含完整API生命周期的规范，其中包含代码和设计模式重用。使用RAML，您可以使用一个规范真正 <a href="/developers/design-your-api">设计</a>,
+                                <a href="/developers/build-your-api">构建</a>, <a href="/developers/test-your-api">测试</a>,
+                                <a href="/developers/document-your-api">记录</a>, 和 <a href="/developers/share-support-your-api">共享</a>
+                                您的API。 </p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-8">
+                    <div class="footer_meu">
+                        <ul>
+                            <li><a href="/developer" title="For Developers">对于开发人员</a></li>
+                            <li><a href="/enterprises" title="For Enterprises">对于企业</a></li>
+                            <li><a href="/projects" title="Projects">项目</a></li>
+                            <li><a href="https://forum.raml.org/" title="Forum">论坛</a></li>
+                            <li><a href="https://medium.com/raml-api" title="Blog">博客</a></li>
+                            <li><a href="/about-raml" title="About">关于</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_links">
+                        <ul>
+                            <li><a href="/" title="RAML">RAML</a></li>
+                            <li><a href="/workgroup" title="Workgroup">工作组</a></li>
+                            <li><a href="/contact" title="Contact">联系</a></li>
+                            <li><a href="/legal" title="Licensing">许可</a></li>
+                            <li><a href="https://forum.raml.org/privacy" title="Privacy">隐私</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

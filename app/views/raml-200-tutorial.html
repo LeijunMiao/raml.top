@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RAML 200 教程 | RAML</title>
+    <meta name="generator" content="Jekyll v3.6.2" />
+    <meta property="og:title" content="RAML 200 教程" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="canonical" href="https://raml.org/developers/raml-200-tutorial" />
+    <meta property="og:url" content="https://raml.org/developers/raml-200-tutorial" />
+    <meta property="og:site_name" content="RAML" />
+    <script type="application/ld+json">
+        {
+            "@type": "WebPage",
+            "url": "https://raml.org/developers/raml-200-tutorial",
+            "headline": "RAML 200 教程",
+            "@context": "http://schema.org"
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=0, maximum-scale=1, user-scalable=yes">
+    <title>RAML 200 教程 | RAML</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="/css/gdpr-cookie.css" rel=stylesheet>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/gdpr-cookie.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-44483523-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body class="raml-200-tutorial page ">
+    <div class="top_wrapper">
+        <header role="banner" id="header_nav">
+            <div class="container">
+                <div class="navbarright">
+                    <ul class="top_menu">
+                        <li><a href="https://github.com/search?utf8=%E2%9C%93&q=RAML" target="_blank">GitHub</a></li>
+                        <li><a href="https://forum.raml.org" target="_blank">论坛</a></li>
+                        <li><a href="/slack">Slack</a></li>
+                        <li><a href="https://twitter.com/ramlapi" target="_blank">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <nav class="navbar navbar-inverse">
+                    <div>
+                        <div class="navbar-header"><a class="navbar-brand" href="/"><img src="/images/ramllogo.png" /></a></div>
+                        <div id="navbar" class="">
+                            <ul class="nav navbar-nav navbarright">
+                                <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/developer">对于开发人员<span
+                                            class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li class="dropdown-submenu"><a href="/developer" class="dropdown-link">为什么
+                                                Raml <span class="dropdown-caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/developers/design-your-api">设计</a></li>
+                                                <li><a href="/developers/build-your-api">建立</a></li>
+                                                <li><a href="/developers/test-your-api">测试</a></li>
+                                                <li><a href="/developers/document-your-api">文档</a></li>
+                                                <li><a href="/developers/share-support-your-api">分享</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu"><a href="/developers/raml-100-tutorial" class="dropdown-link">教程<span
+                                                    class="dropdown-caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/developers/raml-100-tutorial">RAML 100 教程</a></li>
+                                                <li><a href="/developers/raml-200-tutorial">RAML 200 教程</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/"
+                                                target="_blank" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">规范</a></li>
+                                        <li><a href="/projects">项目库</a></li>
+                                        <li><a href="/developers/books-and-resources">书和资源</a></li>
+                                        <li><a href="/developers/contributing">特约</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/enterprises">对于企业
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li><a href="/enterprises">为什么用 RAML</a></li>
+                                        <li><a href="/enterprise/vendor-support">提供商支持</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent_dropdown"><a class="parentlink" href="/projects">项目</a></li>
+                                <li class="parent_dropdown"><a class="parentlink" href="https://medium.com/raml-api">博客</a></li>
+                                <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/about-raml">关于
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li><a href="/workgroup">工作组</a></li>
+                                        <li><a href="/legal">法律</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <div class="container page-content">
+        <div class="row">
+            <aside class="col-md-3 col-xs-3 col-sm-3" role="complementary">
+                <div class="region-sidebar well" data-spy="affix" data-offset-top="105">
+                    <section class="ramlapilinks">
+                        <div class="raml-links-wrapper"><a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/"
+                                target="_blank" class="raml-links" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">阅读规范</a></div>
+                    </section>
+                    <section class="sidebar-menu"><a href="/developers/raml-100-tutorial" class="lastsidemenu">RAML 100
+                            教程</a><a href="#" class="firstmenu active">RAML 200 教程<span class="caret"></span></a>
+                        <ul class="sidemenu">
+                            <li><a href="#setting-up-the-workspace" class="active">设置工作区</a></li>
+                            <li><a href="#use-case" class="active">用例说明</a></li>
+                            <li><a href="#base-raml-file" class="active">第0步：基本RAML文件</a></li>
+                            <li><a href="#body-parameters" class="active">第1步：身体参数</a></li>
+                            <li><a href="#extract-schemas" class="active">第2步：提取架构</a></li>
+                            <li><a href="#resource-types" class="active">第3步：资源类型</a></li>
+                            <li><a href="#parameters" class="active">第4步：参数</a></li>
+                            <li><a href="#includes" class="active">第5步：包括</a></li>
+                            <li><a href="#refactor" class="active">第6步：重构</a></li>
+                            <li><a href="#traits" class="active">第7步：特质</a></li>
+                            <li><a href="#final-tuning" class="active">第8步：最终调整</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </aside>
+            <div class="col-md-9 col-xs-9 col-sm-9 article-content">
+                <h1 class="page-header">RAML 200 教程</h1>
+                <div class="tutorial-intro">
+                    <p><strong>目标：</strong> 一旦熟悉了 <a href="https://raml.org/developers/raml-100-tutorial">RAML的基础知识</a>,
+                        就应该深入研究语言本身更复杂的功能，并充分利用RAML可以提供的功能。</p>
+                    <p><strong>介绍</strong></p>
+                    <p>本教程将指导您完成光盘机API的完整用例。您将学习如何通过应用诸如resourceTypes和traits之类的概念以及诸如！includes之类的RAML实用程序来优化和重用代码。本教程还将演示RAML如何使用模式，并展示如何使用它们来验证HTTP主体。</p>
+                    <p>请单击 <a href="https://github.com/raml-org/raml-examples/tree/master/others/tutorial-jukebox-api"
+                            target="_blank">此处</a>, 如果您想查看本教程中将构建的完整RAML。</p>
+                    <p><strong>假设</strong></p>
+                    <p>您了解 <a href="https://raml.org/developers/raml-100-tutorial">RAML的基础知识</a>:
+                        如何使用资源，参数，方法和响应编写RAML文件。</p>
+                </div>
+                <h2 id="use-case">用例</h2>
+                <p>建立一个音乐Jukebox。虽然物理设备将负责显示信息并捕获用户输入，但它将依靠您的API来检索所请求的信息。点唱机需要能够:</p>
+                <ul>
+                    <li>显示完整的艺术家列表。</li>
+                    <li>显示完整的专辑列表。</li>
+                    <li>按国籍显示艺术家名单。</li>
+                    <li>按流派显示专辑列表。</li>
+                    <li>按标题搜索歌曲。</li>
+                    <li>显示特定艺术家的专辑集合。</li>
+                    <li>显示特定专辑的歌曲列表。</li>
+                    <li>播放歌曲（通过指定歌曲ID）。</li>
+                    <li>输入新的艺术家，专辑和歌曲（仅限经过身份验证的用户）。</li>
+                </ul>
+                <p><strong>考虑因素:</strong> 这是一个自动点唱机，而不是命令行。酒吧中的人可能无法输入大量字符，因此非常感谢用户友好的UI（分页，基于图像等）。</p>
+                <h2 id="base-raml-file">基础RAML文件</h2>
+                <p>如果您已经阅读了 <a href="https://raml.org/developers/raml-100-tutorial">RAML 100 教程</a>,
+                    那么您应该能够理解我们的基本RAML API定义，而不会遇到重大困难。其基本结构可描述为：</p>
+                <pre><code>/songs:
+      get:
+      post:
+      /{songId}:
+        get:
+        /file-content:
+          get:
+          post:
+    /artists:
+      get:
+      post:
+      /{artistId}:
+        get:
+        /albums
+          get:
+    /albums:
+      get:
+      post:
+      /{albumId}:
+        get:
+        /songs:
+          get:
+    </code></pre>
+                <p>正如您在下面的示例中所看到的，资源“/ songs”没有明确定义的POST：缺少body参数。</p>
+                <pre><code class="lang-yaml">/songs:
+      description: Collection of available songs in Jukebox
+      get:
+        description: Get a list of songs based on the song title.
+        queryParameters:
+          songTitle:
+            description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
+            required: true
+            minLength: 3
+            type: string
+            example: &quot;Get L&quot;
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    &quot;songs&quot;: [
+                      {
+                        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+                        &quot;songTitle&quot;: &quot;Get Lucky&quot;
+                      },
+                      {
+                        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
+                        &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
+                      },
+                      {
+                        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
+                        &quot;songTitle&quot;: &quot;Gio sorgio by Moroder&quot;
+                      }
+                    ]
+                  }
+      /{songId}:
+        description: Song entity
+        get:
+          description: Get the song with `songId = {songId}`
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    {
+                      &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+                      &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+                      &quot;duration&quot;: &quot;6:07&quot;,
+                      &quot;artist&quot;: {
+                        &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
+                        &quot;artistName&quot;: &quot;Daft Punk&quot;,
+                        &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
+                      },
+                      &quot;album&quot;: {
+                        &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
+                        &quot;albumName&quot;: &quot;Random Access Memories&quot;,
+                        &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
+                      }
+                    }
+            404:
+              body:
+                application/json:
+                  example: |
+                    {&quot;message&quot;: &quot;Song not found&quot;}
+        /file-content:
+          description: The file to be reproduced by the client
+          get:
+            description: Get the file content
+            responses:
+              200:
+          post:
+      post:
+    </code></pre>
+                <h2 id="body-parameters">BODY 参数</h2>
+                <p><strong>Form 参数</strong></p>
+                <p>有几种方法可以为HTTP方法定义body参数。例如：</p>
+                <pre><code class="lang-yaml">/file-content:
+      description: The file to be reproduced by the client
+      get:
+        description: Get the file content
+        responses:
+          200:
+            body:
+              binary/octet-stream:
+                example: !include heybulldog.mp3
+      post:
+        description: |
+          Enters the file content for an existing song entity.
+    
+          Use the &quot;binary/octet-stream&quot; content type to specify the content from any consumer (excepting web-browsers).
+          Use the &quot;multipart-form/data&quot; content type to upload a file which content will become the file-content
+        body:
+          binary/octet-stream:
+          multipart/form-data:
+            properties:
+              file:
+                description: The file to be uploaded
+                required: true
+                type: file
+    </code></pre>
+                <p><code>/file-content</code> 资源表示当Jukebox用户选择特定歌曲时要重现的文件，尽管有很多方法可以在RESTful
+                    API上对此场景进行建模。我们选择这个用于本教程目的。这并不意味着它是一种最佳实践。</p>
+                <p>正如您在POST定义中所看到的，它的主体包含两种可能的内容类型。在<code>binary/octet-stream</code>
+                    简单地预计<code>file-content</code> 发送作为参数。对于支持文件的API，它是一种有效且流行的技术。不幸的是，它使得无法从Web浏览器调用API（至少是为了上传文件）。</p>
+                <p>对于 <code>multipart/form-data</code> (以及 <code>application/x-www-form-urlencoded</code>),
+                    可以定义表单参数的映射，定义此映射的方式与RAML的其余部分相同（在这种情况下，“file”字段是必需的，类型为“file”） ）。</p>
+                <p><strong>Schemas</strong></p>
+                <p>body也可以是 <code>application/json</code> content-type (等等 <code>application/xml</code>)
+                    对于这些，预期的body参数将是具有有效JSON（或XML）的字符串。因此，这是定义方法的body参数的另一种方法。RAML支持的功能之一是定义模式并将其应用于body参数的可能性，如下面的示例所示。</p>
+                <pre><code class="lang-yaml">body:
+      application/json:
+        type: |
+          {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;$schema&quot;: &quot;http://json-schema.org/draft-03/schema&quot;,
+            &quot;id&quot;: &quot;http://jsonschema.net&quot;,
+            &quot;required&quot;: true,
+            &quot;properties&quot;: {
+              &quot;songTitle&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;required&quot;: true
+              },
+              &quot;albumId&quot;: {
+                &quot;type&quot;: &quot;string&quot;,
+                &quot;required&quot;: true,
+                &quot;minLength&quot;: 36,
+                &quot;maxLength&quot;: 36
+              }
+            }
+          }
+        example: |
+          {
+            &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+            &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+            &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
+          }
+    </code></pre>
+                <p>该示例基本上是说：“期望参数是有效的json，并且对于有效，它需要满足指定的模式定义”。在这种情况下，表示的对象具有：</p>
+                <ul>
+                    <li>“字符串”类型的“songTitle”属性，它是必需的</li>
+                    <li>“stringId”类型的“albumId”属性，不仅是必需的，而且还需要36个字符长。</li>
+                </ul>
+                <p>本教程的目的不是解释JSON和XML模式的工作原理，但您可以在 <a href="http://json-schema.org/">http://json-schema.org/</a> 和 <a href="http://json-schema.org/">http://www.w3.org/XML/Schema.html</a>上了解更多信息。</p>
+                <h2 id="extract-schemas">提取方案</h2>
+                <p>一个有趣的RAML功能是提取模式并按名称引用它们的能力。这样做有三个主要优点，前两个可能看起来有点明显：</p>
+                <ul>
+                    <li>提高RAML可读性</li>
+                    <li>允许在几个部分中重用模式。</li>
+                </ul>
+                <p>当尝试使用“资源类型”并参数化这些时，第三个优点将在以下部分中变得清晰。</p>
+                <pre><code class="lang-yaml">types:
+      song: |
+        {
+          &quot;type&quot;: &quot;object&quot;,
+          &quot;$schema&quot;: &quot;http://json-schema.org/draft-03/schema&quot;,
+          &quot;id&quot;: &quot;http://jsonschema.net&quot;,
+          &quot;required&quot;: true,
+          &quot;properties&quot;: {
+            &quot;songTitle&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;required&quot;: true
+            },
+            &quot;albumId&quot;: {
+              &quot;type&quot;: &quot;string&quot;,
+              &quot;required&quot;: true,
+              &quot;minLength&quot;: 36,
+              &quot;maxLength&quot;: 36
+            }
+          }
+        }
+    </code></pre>
+                <pre><code class="lang-yaml">body:
+      application/json:
+        type: song
+        example: |
+          {
+            &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+            &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+            &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
+          }
+    </code></pre>
+                <p>正如您在代码示例中所看到的，现在正在定义前面部分中描述的模式，并通过名称“song”进行引用。名称选择不是随机的，正确的约定将允许您参数化资源类型并重用大量代码（这将在以下部分中解释）。</p>
+                <h2 id="resource-types">资源类型</h2>
+                <p><strong>“收集/收集项目”模式</strong></p>
+                <p><strong>我们绝对不是说所有RESTful API都是一样的。</strong> 我甚至不想暗示它。但绝对有一些共同的行为。例如，如果我们试图表示可以从业务模型推断出的资源，那么它可能与CRUD模型类似。给定一个资源，你可以create一个新的，[retrieve一个或所有这些，update或delete现有之一。</p>
+                <p>从这个意义上讲，我们可以轻松识别现有资源（要获取，删除或更新），新资源（要添加到集合中）和集合本身（要检索）。</p>
+                <pre><code class="lang-yaml">#%RAML 1.0
+      title:
+    
+      /resources:
+        get:
+        post:
+        /{resourceId}:
+          get:
+          put:
+          delete:
+    </code></pre>
+                <p>所以，我们发现了两种不同类型的资源。项目（由id表示）和集合（包含所有项目）。能够定义这些类型并声明这些类型的资源会很好。幸运的是，在RAML中有一种方法可以做到这一点。 <strong>RAML中的资源类型</strong></p>
+                <p>与上一个示例代码类似，我们只显示了资源和支持的方法，此步骤仅包括使用其支持的方法创建“resourceTypes”。</p>
+                <pre><code class="lang-yaml">resourceTypes:
+      collection:
+        get:
+        post:
+      collection-item:
+        get:
+    </code></pre>
+                <p>您可能会注意到，未为collection-item resourceType定义PUT和DELETE方法。这基本上是因为用例不请求删除或更新任何资源。所以，这个版本所说的是“有两种资源类型：集合，它定义了GET和POST方法，集合项目定义了GET方法”。单独站立，它似乎并不是非常有用。但是，理解作为在代码中定义良好的resourceTypes和重用模式的第一步非常重要。</p>
+                <p><strong>定义和参数化resourceTypes</strong></p>
+                <p>到目前为止，我们对收藏品了解多少？让我们看一下“/ songs”，“/ artists”和“/ albums”的共同点：</p>
+                <ul>
+                    <li>描述</li>
+                    <li>GET方法：<ul>
+                            <li>描述</li>
+                            <li>HTTP状态200的响应（主体的内容类型是“application / json”）</li>
+                        </ul>
+                    </li>
+                    <li>POST方法：<ul>
+                            <li>描述</li>
+                            <li>“access_token”queryParameter</li>
+                            <li>bodyParameter，带有“application / json”contentType，并由Schema验证</li>
+                            <li>HTTP状态为200的响应（主体的内容类型为“application / json”）</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>所以，让我们从其中一个资源中提取这个（我将在这个例子中使用“/ songs”，但我们最终将参数化resourceType，因此选择启动哪一个并不重要）。</p>
+                <pre><code class="lang-yaml">resourceTypes:
+      collection:
+        description: Collection of available songs in Jukebox
+        get:
+          description: Get a list of songs based on the song title.
+          responses:
+            200:
+              body:
+                application/json:
+        post:
+          description: |
+            Add a new song to Jukebox.
+          queryParameters:
+            access_token:
+              description: &quot;The access token provided by the authentication application&quot;
+              example: AABBCCDD 
+              required: true
+              type: string
+          body:
+            application/json:
+              type: song
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    { &quot;message&quot;: &quot;The song has been properly entered&quot; }
+    </code></pre>
+                <p>使用现在的 <code>collection</code> resourceType，我们无能为力。将它应用于 <code>/songs</code> 资源是可能的，但我们不希望这些描述，模式甚至POST响应都应用于所有资源，因为集合是特定的 <code>/songs</code>。参数在这里很有用。假设您可以在resourceType上编写一个“占位符”，以填充资源上指定的值。例如：</p>
+                <pre><code>description: Collection of available &lt;&lt;resource&gt;&gt; in Jukebox
+    </code></pre>
+                <p>与 <code>&lt;&lt;resource&gt;&gt;</code> 接收“歌曲”，“艺术家”，或者根据资源“专辑”。</p>
+                <p>虽然这是可能的（并且对于大多数情况非常有用），但对于这种特殊情况，由于<strong>Reserved Parameters</strong>，资源甚至不必传递参数。</p>
+                <p>保留参数只是一个参数，其值由其上下文自动指定。对于resourceTypes情况，有两个保留参数：resourcePath和resourcePathName。对于<code>/songs</code> 示例中，值将是“/歌曲”和“歌曲”分别。</p>
+                <p>现在，如果您正在查看最后一个代码段，您将意识到我们需要在某些情况下将值设置为“歌曲”，而在其他情况下使用“歌曲”。这里是 <strong>Parameters Transformers</strong> 得方便的地方。</p>
+                <p>T我们可以为此示例使用两个参数变换器：<code>!singularize</code> 和
+                    <code>!pluralize</code> （注意：当前版本的RAML支持的唯一区域设置是“美国英语”）。</p>
+                <p>所以结合这个，让我们更新我们的最新代码片段：</p>
+                <pre><code class="lang-yaml">resourceTypes:
+      collection:
+        description: Collection of available &lt;&lt;resourcePathName&gt;&gt; in Jukebox
+        get:
+          description: Get a list of &lt;&lt;resourcePathName&gt;&gt; based on the song title.
+          responses:
+            200:
+              body:
+                application/json:
+        post:
+          description: |
+            Add a new &lt;&lt;resourcePathName|!singularize&gt;&gt; to Jukebox.
+          queryParameters:
+            access_token:
+              description: &quot;The access token provided by the authentication application&quot;
+              example: AABBCCDD 
+              required: true
+              type: string
+          body:
+            application/json:
+              type: &lt;&lt;resourcePathName|!singularize&gt;&gt;
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    { &quot;message&quot;: &quot;The &lt;&lt;resourcePathName|!singularize&gt;&gt; has been properly entered&quot; }
+    </code></pre>
+                <pre><code class="lang-yaml">/songs:
+      type: collection
+      get:
+        queryParameters:
+          songTitle:
+            description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
+            required: true
+            minLength: 3
+            type: string
+            example: &quot;Get L&quot;
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    &quot;songs&quot;: [
+                      {
+                        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+                        &quot;songTitle&quot;: &quot;Get Lucky&quot;
+                      },
+                      {
+                        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
+                        &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
+                      },
+                      {
+                        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
+                        &quot;songTitle&quot;: &quot;Gio sorgio by Moroder&quot;
+                      }
+                    ]
+                  }
+      post:
+        body:
+          application/json:
+            example: |
+              {
+                &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+                &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+                &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
+              }
+    </code></pre>
+                <p>请注意，甚至使用此参数指定Schema名称（在本例中为singular）。我们之前提到模式名称不是随机的 - 这就是原因。强调的另一个重要方面是定义资源类型并将其应用于资源并不禁止您覆盖任何地图的元素。在这个例子中，我们仍然看到GET方法同时存在于resourceType和resourceType中（响应，POST等相同）。这不仅是允许的，而且是重新定义从一种资源变为另一种资源的东西的方式。
+                    <strong>如果您认为这看起来像OOP继承，那么你是对的！</strong></p>
+                <p>现在，让我们使用“collection-item”resourceType。</p>
+                <p>这段代码没什么新鲜的。更多resourceType定义，参数化和用法：</p>
+                <pre><code class="lang-yaml">collection-item:
+      description: Entity representing a &lt;&lt;resourcePathName|!singularize&gt;&gt;
+      get:
+        description: |
+          Get the &lt;&lt;resourcePathName|!singularize&gt;&gt;
+          with &lt;&lt;resourcePathName|!singularize&gt;&gt;Id =
+          {&lt;&lt;resourcePathName|!singularize&gt;&gt;Id}
+        responses:
+          200:
+            body:
+              application/json:
+          404:
+            body:
+              application/json:
+                example: |
+                  {&quot;message&quot;: &quot;&lt;&lt;resourcePathName|!singularize&gt;&gt; not found&quot; }
+    </code></pre>
+                <pre><code class="lang-yaml">/songs:
+      ...
+      /{songId}:
+        type: collection-item
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    {
+                      &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+                      &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+                      &quot;duration&quot;: &quot;6:07&quot;,
+                      &quot;artist&quot;: {
+                        &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
+                        &quot;artistName&quot;: &quot;Daft Punk&quot;,
+                        &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
+                      },
+                      &quot;album&quot;: {
+                        &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
+                        &quot;albumName&quot;: &quot;Random Access Memories&quot;,
+                        &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
+                      }
+                    }
+    </code></pre>
+                <p>但正如您所看到的，我们仍在重复许多代码。特别：</p>
+                <pre><code class="lang-yaml">get:
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+    </code></pre>
+                <p>基本上，每一段代码都需要定义<strong>示例</strong>。这基本上是因为我们只学会了如何使用保留参数。但是，我们还提到参数化的想法是指定要填充指定值的“占位符”。这将解决我们的“例子问题”。</p>
+                <h2 id="parameters">参数</h2>
+                <p>在resourceType中定义参数（使用占位符）时，参数和保留参数之间没有区别。仅在资源级别传递参数时才会显示实际差异。例如，名为as的参数 <code>exampleItem</code>
+                    需要以这种方式传递：</p>
+                <pre><code class="lang-yaml">/{songId}:
+      type:
+        collection-item:
+          exampleItem: THIS IS THE EXAMPLE
+    </code></pre>
+                <p>在“人类语言”中，它基本上是说 <code>/{songId}</code> 资源是
+                    <code>collection-item</code> 类型的。但现在，它也表明<code>collection-item</code>
+                    参数的值 <code>exampleItem</code> 是“这就是例子”。由于这是一个字符串，因此字符串的所有YAML规则都是有效的。话虽如此，让我们来看看一些相关的代码片段。</p>
+                <pre><code class="lang-yaml">resourceTypes:
+      collection:
+        description: Collection of available &lt;&lt;resourcePathName&gt;&gt; in Jukebox
+        get:
+          description: Get a list of &lt;&lt;resourcePathName&gt;&gt; based on the song title.
+          responses:
+            200:
+              body:
+                application/json:
+        post:
+          description: |
+            Add a new &lt;&lt;resourcePathName|!singularize&gt;&gt; to Jukebox.
+          queryParameters:
+            access_token:
+              description: &quot;The access token provided by the authentication application&quot;
+              example: AABBCCDD 
+              required: true
+              type: string
+          body:
+            application/json:
+              type: &lt;&lt;resourcePathName|!singularize&gt;&gt;
+          responses:
+            200:
+              body:
+                application/json:
+                  example: |
+                    { &quot;message&quot;: &quot;The &lt;&lt;resourcePathName|!singularize&gt;&gt; has been properly entered&quot; }
+      collection-item:
+        description: Entity representing a &lt;&lt;resourcePathName|!singularize&gt;&gt;
+        get:
+          description: |
+            Get the &lt;&lt;resourcePathName|!singularize&gt;&gt;
+            with &lt;&lt;resourcePathName|!singularize&gt;&gt;Id =
+            {&lt;&lt;resourcePathName|!singularize&gt;&gt;Id}
+          responses:
+            200:
+              body:
+                application/json:
+            404:
+              body:
+                application/json:
+                  example: |
+                    {&quot;message&quot;: &quot;&lt;&lt;resourcePathName|!singularize&gt;&gt; not found&quot; }
+    </code></pre>
+                <pre><code class="lang-yaml">/songs:
+      type:
+        collection:
+          exampleCollection: |
+            [
+              {
+                &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+                &quot;songTitle&quot;: &quot;Get Lucky&quot;
+              },
+              {
+                &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
+                &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
+              },
+              {
+                &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
+                &quot;songTitle&quot;: &quot;Gio sorgio by Morodera&quot;
+              }
+            ]
+          exampleItem: |
+            {
+              &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+              &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+              &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
+            }
+      get:
+        queryParameters:
+          songTitle:
+            description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
+            required: true
+            minLength: 3
+            type: string
+            example: &quot;Get L&quot;
+      /{songId}:
+        type:
+          collection-item:
+            exampleItem: |
+              {
+                &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+                &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+                &quot;duration&quot;: &quot;6:07&quot;,
+                &quot;artist&quot;: {
+                  &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
+                  &quot;artistName&quot;: &quot;Daft Punk&quot;,
+                  &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
+                },
+                &quot;album&quot;: {
+                  &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
+                  &quot;albumName&quot;: &quot;Random Access Memories&quot;,
+                  &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
+                }
+              }
+    </code></pre>
+                <p>如您所见，前一个示例中显示的相同概念同时应用于<code>/songs</code>,
+                    和 <code>/songs/{songId}</code> 资源。在前面的示例中，最后重复的代码现在完全位于resourceType中，而POST定义直接从资源中消失。 <strong>那是对的。现在，每个 <code>collection-item</code>
+                        类型化的资源都将具有有效（通用）POST定义，而无需您编写它。</strong></p>
+                <h2 id="includes">INCLUDES</h2>
+                <p>在使用resourceTypes的最后一步中，我们已经大大改进了RAML定义。我们能够提取资源的通用组件，并使用一个允许类似继承功能的结构封装它们。</p>
+                <p>尽管如此，RAML文件仍然包含许多可被视为“不是API描述”的信息。如果愿意，可以选择“经济舱”成员。 <strong>同样重要，但不一定是主RAML文件的一部分。</strong></p>
+                <p>通过 <code>!includes</code>，RAML允许我们构建文件分布式API定义，这不仅有助于鼓励代码重用，还可以提高可读性。</p>
+                <p>在这里，我们将用于<code>/songs</code> 资源的示例提取到不同的文件，并将它们包含在主RAML定义中。</p>
+                <pre><code class="lang-json">{
+      &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+      &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+      &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
+    }
+    </code></pre>
+                <pre><code class="lang-json">{
+      &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+      &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+      &quot;duration&quot;: &quot;6:07&quot;,
+      &quot;artist&quot;: {
+        &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
+        &quot;artistName&quot;: &quot;Daft Punk&quot;,
+        &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
+      },
+      &quot;album&quot;: {
+        &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
+        &quot;albumName&quot;: &quot;Random Access Memories&quot;,
+        &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
+      }
+    }
+    </code></pre>
+                <pre><code class="lang-json">[
+      {
+        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+        &quot;songTitle&quot;: &quot;Get Lucky&quot;
+      },
+      {
+        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
+        &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
+      },
+      {
+        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
+        &quot;songTitle&quot;: &quot;Gio sorgio by Morodera&quot;
+      }
+    ]
+    </code></pre>
+                <p>如您所见，提取的文件包含原始字符串。重要的是要强调每个包含的文件都被RAML视为一个字符串，这提供了一些众所周知的关于如何在文件之间分配定义的限制。除了限制之外，这些限制还试图定义一种常用的工作方式！包括并避免使用自由格式定义的API。请记住，RAML的主要目标之一是统一标准并鼓励最佳实践。以下代码段显示了如何从主定义中包含或“调用”提取的文件。</p>
+                <pre><code class="lang-yaml">/songs:
+      type:
+        collection:
+          exampleCollection: !include jukebox-include-songs.sample
+          exampleItem: !include jukebox-include-song-new.sample
+      /{songId}:
+        type:
+          collection-item:
+            exampleItem: !include jukebox-include-song-retrieve.sample
+    </code></pre>
+                <p>如最后一个片段所示，RAML功能鼓励您减少编写的代码数量，同时使其更具可重用性和可维护性。</p>
+                <h2 id="refactor">重构</h2>
+                <p>我们已经介绍了几个功能，并且在我们的API定义方面取得了很大进展，但是我们不是缺少一些东 我们只关注“/ songs”资源（及其降序分支）。如果你现在检查你的RAML文件，你会发现所有其他资源仍然没有利用我们已经完成的工作。我们马上就解决吧！对所有资源重复相同的过程：</p>
+                <ul>
+                    <li>识别并应用集合和集合项模式</li>
+                    <li>传递正确的参数</li>
+                    <li>将所属的示例提取到分离的文件中</li>
+                </ul>
+                <p>您可能已经注意到，RAML文件中的行数已经大大减少，并且文件比以前多。最重要的是：它明显更简单！但并非一切都如此顺利。仔细观察，子集（<code>/artists/{artistId}/albums</code>
+                    和 <code>/albums/{albumId}/songs</code>）存在问题。由于这些不是每个资源的主要集合，因此我们决定不允许在它们上创建新元素。换句话说，这些集合是只读的。应用 <code>collection</code> resourceType时，我们还自动添加了“POST”方法。另外一个结果是，RAML定义现在也要求<code>exampleItem</code> 为这些资源传递参数（我们通过传递暂时解决了这个参数{}<code>{}</code>）。 </p>
+                <pre><code class="lang-yaml">/artists:
+      /{artistId}:
+        /albums:
+          type:
+            collection:
+              exampleCollection: !include jukebox-include-artist-albums.sample
+              exampleItem: {}
+          description: Collection of albulms belonging to the artist
+          get:
+            description: Get a specific artist&#39;s albums list
+    </code></pre>
+                <p>虽然这很尴尬，但这并不是什么大问题，它实际上会帮助我们进一步解决问题。</p>
+                <p>让我们创建另一个名为的resourceType <code>readOnlyCollection</code>。它将类似
+                    <code>collection</code>但没有“POST方法”。让我们将这个新的resourceType应用于其相应的集合： <code>artists/{artistId}/albums</code> 和 <code>/albums/{albumId}/songs</code>:</p>
+                <pre><code class="lang-yaml">readOnlyCollection:
+      description: Collection of available &lt;&lt;resourcePathName&gt;&gt; in Jukebox.
+      get:
+        description: Get a list of &lt;&lt;resourcePathName&gt;&gt;.
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  &lt;&lt;exampleCollection&gt;&gt;
+    </code></pre>
+                <pre><code class="lang-yaml">/artists:
+      /{artistId}:
+        /albums:
+          type:
+            readOnlyCollection:
+              exampleCollection: !include jukebox-include-artist-albums.sample
+          description: Collection of albums belonging to the artist
+          get:
+        description: Get a specific artist&#39;s albums list
+    /albums:
+      /{albumId}:
+        /songs:
+          type:
+            readOnlyCollection:
+              exampleCollection: !include jukebox-include-album-songs.sample
+          get:
+            description: Get the list of songs for the album with `albumId = {albumId}`
+    </code></pre>
+                <p>如果您正在详细地遵循代码，那么您已经注意到了一些事情：<code>collection</code>
+                    而 <code>readOnlyCollection</code> resourceTypes正在重复一些代码。实际上，<code>readOnlyCollection</code>
+                    代码完全包含在<code>collection</code> 代码中。那是对的！并且有一种方法可以提高效率。这些都是关于“类型组合”的，它将在后面的教程中完全涵盖。</p>
+                <h2 id="traits">性状</h2>
+                <p>我们差不多完成了！我们正忙于满足所述用例的所有要求。然而，像往常一样，我们在构建时发现了一些东西，本教程也不例外。我可以对收藏品进行排序吗？我的API不应该让用户有机会分页吗？我们选择的搜索集合的策略是否足够好？如果我们将来需要增强并进行更复杂的查询，该怎么办？我们来解决这些问题。但首先，我们需要正确理解它们</p>
+                <p><strong>了解我们的资源</strong></p>
+                <p>让我们构建一个简单的表来发现并同意每个集合功能：</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Collection/Capabilities</th>
+                            <th style="text-align:center">Searchable</th>
+                            <th style="text-align:center">Sorteable</th>
+                            <th style="text-align:center">Pageable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>/songs</code></td>
+                            <td style="text-align:center">YES</td>
+                            <td style="text-align:center">YES</td>
+                            <td style="text-align:center">YES</td>
+                        </tr>
+                        <tr>
+                            <td><code>/artists</code></td>
+                            <td style="text-align:center">YES</td>
+                            <td style="text-align:center">YES</td>
+                            <td style="text-align:center">YES</td>
+                        </tr>
+                        <tr>
+                            <td><code>/albums</code></td>
+                            <td style="text-align:center">YES</td>
+                            <td style="text-align:center">YES</td>
+                            <td style="text-align:center">YES</td>
+                        </tr>
+                        <tr>
+                            <td><code>/artists/{aId}/albums</code></td>
+                            <td style="text-align:center">NO</td>
+                            <td style="text-align:center">YES</td>
+                            <td style="text-align:center">YES</td>
+                        </tr>
+                        <tr>
+                            <td><code>/albums/{aId}/songs</code></td>
+                            <td style="text-align:center">NO</td>
+                            <td style="text-align:center">YES</td>
+                            <td style="text-align:center">NO</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>如果我们考虑谁将使用API​​，那么这个表可能看起来非常不同（可以在客户端过滤，排序和分页小集合）。出于本教程的目的，我们仍然保留它。</p>
+                <p><strong>修复可搜索的集合</strong></p>
+                <p>在介绍Traits概念之前，让我们通过应用通用的“查询”queryParameter来增强Searchable固定参数。</p>
+                <pre><code class="lang-yaml">/songs:
+      type:
+        collection:
+          exampleCollection: !include jukebox-include-songs.sample
+          exampleItem: !include jukebox-include-song-new.sample
+      get:
+        queryParameters:
+          songTitle:
+            description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
+            required: true
+            minLength: 3
+            type: string
+            example: &quot;Get L&quot;
+    </code></pre>
+                <pre><code class="lang-yaml">/songs:
+      type:
+        collection:
+          exampleCollection: !include jukebox-include-songs.sample
+          exampleItem: !include jukebox-include-song-new.sample
+      get:
+        queryParameters:
+          query:
+            description: |
+              JSON array [{&quot;field1&quot;,&quot;value1&quot;,&quot;operator1&quot;},{&quot;field2&quot;,&quot;value2&quot;,&quot;operator2&quot;},...,{&quot;fieldN&quot;,&quot;valueN&quot;,&quot;operatorN&quot;}] with valid searchable fields: songTitle
+            example: |
+              [&quot;songTitle&quot;, &quot;Get L&quot;, &quot;like&quot;]
+    </code></pre>
+                <p><strong>Searchable Trait</strong></p>
+                <p>与多个资源可能使用特定resourceType的方式相同，可以使用traits定义和重用类似的行为。这是代码中更好地解释的这些概念之一：</p>
+                <pre><code class="lang-yaml">/songs:
+      type:
+        collection:
+          exampleCollection: !include jukebox-include-songs.sample
+          exampleItem: !include jukebox-include-song-new.sample
+      get:
+        queryParameters:
+          query:
+            description: |
+              JSON array [{&quot;field1&quot;,&quot;value1&quot;,&quot;operator1&quot;},{&quot;field2&quot;,&quot;value2&quot;,&quot;operator2&quot;},...,{&quot;fieldN&quot;,&quot;valueN&quot;,&quot;operatorN&quot;}] with valid searchable fields: songTitle
+            example: |
+              [&quot;songTitle&quot;, &quot;Get L&quot;, &quot;like&quot;]
+    </code></pre>
+                <pre><code class="lang-yaml">traits:
+      searchable:
+        queryParameters:
+          query:
+            description: |
+              JSON array [{&quot;field1&quot;,&quot;value1&quot;,&quot;operator1&quot;},{&quot;field2&quot;,&quot;value2&quot;,&quot;operator2&quot;},...,{&quot;fieldN&quot;,&quot;valueN&quot;,&quot;operatorN&quot;}] &lt;&lt;description&gt;&gt;
+            example: |
+              &lt;&lt;example&gt;&gt;
+    </code></pre>
+                <p>如您所见，此Searchable特征由名称和适用参数组成。在上面的例子中也很明显，可以参数化特征。让我们检查特征如何应用于方法:</p>
+                <pre><code class="lang-yaml">/songs:
+      type:
+        collection:
+          exampleCollection: !include jukebox-include-songs.sample
+          exampleItem: !include jukebox-include-song-new.sample
+      get:
+        is: [searchable: {description: &quot;with valid searchable fields: songTitle&quot;, example: &quot;[\&quot;songTitle\&quot;, \&quot;Get L\&quot;, \&quot;like\&quot;]&quot;}]
+    </code></pre>
+                <p>所以，这个定义真正说的是有一个叫做“Searchable”的特性，而“/ songs”资源就是利用它。此外，特征应用于GET方法本身，因为“可搜索”合同应仅适用于该特定方法。在其他情况下，您可以将特征应用于整个资源，甚至更多： <strong>特征也可以应用于resourceTypes.</strong> 本主题应该并将在单独的教程（类型组合）中介绍。无论如何，请随意尝试，并始终记住，您可以：</p>
+                <p>需要注意的是，我们已经申请了检索的性状 <code>/songs</code>, <code>/artists</code>
+                    和 <code>/albums</code> 资源.</p>
+                <p><strong>Other traits</strong></p>
+                <p>考虑到我们的表，我们需要创建2个额外的特征：Orderable和Pageable。创建是微不足道的，当应用时，我们会确认您在上一步中可能注意到的内容：traits是一个集合（这就是它们在数组中应用的原因）。</p>
+                <pre><code class="lang-yaml">orderable:
+      queryParameters:
+        orderBy:
+          description: |
+            Order by field: &lt;&lt;fieldsList&gt;&gt;
+          type: string
+          required: false
+        order:
+          description: Order
+          enum: [desc, asc]
+          default: desc
+          required: false
+    pageable:
+      queryParameters:
+        offset:
+          description: Skip over a number of elements by specifying an offset value for the query
+          type: integer
+          required: false
+          example: 20
+          default: 0
+        limit:
+          description: Limit the number of elements on the response
+          type: integer
+          required: false
+          example: 80
+          default: 10
+    </code></pre>
+                <pre><code class="lang-yaml">/songs:
+      type:
+        collection:
+          exampleCollection: !include jukebox-include-songs.sample
+          exampleItem: !include jukebox-include-song-new.sample
+      get:
+        is: [
+          searchable: {description: &quot;with valid searchable fields: songTitle&quot;, example: &quot;[\&quot;songTitle\&quot;, \&quot;Get L\&quot;, \&quot;like\&quot;]&quot;},
+          orderable: {fieldsList: &quot;songTitle&quot;},
+          pageable
+        ]
+    </code></pre>
+                <p>在这种情况下，您可以看到“可分页”特征没有接收任何参数。</p>
+                <p>前进！将适当的特征应用于我们在表中定义的适当资源。</p>
+                <h2 id="final-tuning">最后的调整</h2>
+                <p>我们可以说我们的RAML文件已经过适当的重构，现在更具可读性，可重用性和可维护性。也许最后一步是仔细检查RAML定义的哪些部分现在可以提取到其他文件（就像我们使用“示例”一样）。从根开始，我们找到了模式，看起来很简单，每个JSON（在这种情况下）都可以被提取并包含在我们学到的内容中。</p>
+                <pre><code class="lang-yaml">types:
+      song: !include jukebox-include-song.schema
+      artist: !include jukebox-include-artist.schema
+      album: !include jukebox-include-album.schema
+    </code></pre>
+                <p>当然，文件系统中会出现三个新文件。</p>
+                <p>虽然这似乎不是一个启示（它不是），但让我们继续检查我们的RAML文件以发现可以提取的其他内容。老实说，resourceTypes和traits真的很诱人。但如果你尝试遵循相同的策略，你肯定会失败。请记住，在前面的部分中我们解释过该 <code>!include</code> 函数只是获取文件的内容并将其内容嵌入为字符串？这正是我们想要用的例子和模式。但是，如果我们再次查看resourceTypes和traits，我们会注意到它们不仅仅是字符串，而是map（就像RAML文件的其余部分一样）。所以基本上，不！您无法使用与提取示例和模式相同的方法提取这些内容。</p>
+                <p>但是，您可以将所有resourceTypes提取到文件中（并对特征执行相同操作）。</p>
+                <pre><code>resourceTypes: !include jukebox-includes-resourceTypes.inc
+    </code></pre>
+                <p>虽然这不是限制，但值得注意的是，这并不意味着它是一种推荐的做法。在某些情况下，您需要妥协。例如：如果我们有2000行的resourceTypes定义，我们可能想将它提取到一个单独的文件中。但是，如果resourceTypes并没有真正使可读性复杂化，那么能够在不转到外部文件的情况下查看它们的定义方式也很不错。像往常一样，这是一个很好的判断问题。</p>
+                <h2 id="conclusion">结论</h2>
+                <p>在本教程中，我们学习了如何从代码重用和可维护性的角度优化我们的RAML文件，引入了Traits，resourceTypes和includes，并开发和重构了一个完整的用例。</p>
+                <p>最后，就像在每个学科中一样，我们需要运用良好的判断力。永远记住，过度工程永远不是一个好主意。永远。</p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-wrapper">
+        <footer class="footer container">
+            <div class="row">
+                <div class="col-md-4">
+                    <section>
+                        <div class="logo"><img src="/images/ramllogo.png" alt="home" /></div>
+                        <div class="footer_description">
+                            <p>RAML是唯一一个旨在以人类可读格式包含完整API生命周期的规范，其中包含代码和设计模式重用。使用RAML，您可以使用一个规范真正 <a href="/developers/design-your-api">设计</a>,
+                                <a href="/developers/build-your-api">构建</a>, <a href="/developers/test-your-api">测试</a>,
+                                <a href="/developers/document-your-api">记录</a>, 和 <a href="/developers/share-support-your-api">共享</a>
+                                您的API。 </p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-8">
+                    <div class="footer_meu">
+                        <ul>
+                            <li><a href="/developer" title="For Developers">对于开发人员</a></li>
+                            <li><a href="/enterprises" title="For Enterprises">对于企业</a></li>
+                            <li><a href="/projects" title="Projects">项目</a></li>
+                            <li><a href="https://forum.raml.org/" title="Forum">论坛</a></li>
+                            <li><a href="https://medium.com/raml-api" title="Blog">博客</a></li>
+                            <li><a href="/about-raml" title="About">关于</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_links">
+                        <ul>
+                            <li><a href="/" title="RAML">RAML</a></li>
+                            <li><a href="/workgroup" title="Workgroup">工作组</a></li>
+                            <li><a href="/contact" title="Contact">联系</a></li>
+                            <li><a href="/legal" title="Licensing">许可</a></li>
+                            <li><a href="https://forum.raml.org/privacy" title="Privacy">隐私</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
